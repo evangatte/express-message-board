@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Message Board</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- <link rel='stylesheet' href='/stylesheets/style.css' /> -->
+  </head>
+  <body>
+    <div class="container">
+      <div class="row text-center">
+        <div class="col">
+          <h1>Message Board</h1>
+        </div>
+      </div>
+
+      <% messages.forEach(messages => { %>
+        <div class="card w-75 mx-auto mb-4">
+          <div class="card-body">
+            <h5 class="card-title"><%= messages.title %></h5>
+            
+            <div class="card-text"><%= messages.content %></div>
+            <div class="card-subtitle text-muted"><%= messages.date.toDateString() %></div>
+          </div>
+        </div>
+      <% }) %>
+    </div>
+  </body>
+</html>
