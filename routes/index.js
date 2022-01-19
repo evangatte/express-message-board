@@ -7,12 +7,6 @@ const messages = [
     content: 'Well, more of an opinion but Lousiana has the best food!',
     user: 'Evan',
     date: new Date()
-  },
-  {
-    title: 'Fact about louisiana',
-    content: 'Well, more of an opinion but Lousiana has the best food!',
-    user: 'Evan',
-    date: new Date()
   }
 ]
 
@@ -20,5 +14,10 @@ const messages = [
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Message Board', messages: messages });
 });
+
+router.get('/new', (req, res) => {
+  res.render('form')
+})
+
 
 module.exports = router;

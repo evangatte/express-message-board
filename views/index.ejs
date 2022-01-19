@@ -10,16 +10,17 @@
       <div class="row text-center">
         <div class="col">
           <h1>Message Board</h1>
+          <a href="/new" class="btn btn-success mx-auto mb-4">New Post</a>
         </div>
       </div>
 
       <% messages.forEach(messages => { %>
-        <div class="card w-75 mx-auto mb-4">
+        <div class="card border-info w-75 mx-auto mb-4">
           <div class="card-body">
-            <h5 class="card-title"><%= messages.title %></h5>
+            <h5 class="card-title text-center border-bottom border-dark"><%= messages.title %></h5>
             
-            <div class="card-text"><%= messages.content %></div>
-            <div class="card-subtitle text-muted"><%= messages.date.toDateString() %></div>
+            <div class="card-text pb-3"><%= messages.content %></div>
+            <div class="card-subtitle text-muted"><span class="pr-3 "><%= messages.user %></span> <%= messages.date.toDateString() %></div>
           </div>
         </div>
       <% }) %>
