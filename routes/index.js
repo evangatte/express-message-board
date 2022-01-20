@@ -18,6 +18,7 @@ const messages = [
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
+
   res.render('index', { title: 'Message Board', messages: messages });
 });
 
@@ -26,7 +27,8 @@ router.get('/new', (req, res) => {
 })
 
 router.post('/new', (req, res) => {
-  messages.push({
+ 
+  messages.unshift({
     title: req.body.title,
     content: req.body.content,
     user: req.body.user,
