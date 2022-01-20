@@ -7,6 +7,12 @@ const messages = [
     content: 'Well, more of an opinion but Lousiana has the best food!',
     user: 'Evan',
     date: new Date()
+  },  
+  {
+    title: 'Crawfish',
+    content: 'Trust me, they taste alot better than they look!',
+    user: 'Evan',
+    date: new Date()
   }
 ]
 
@@ -19,5 +25,14 @@ router.get('/new', (req, res) => {
   res.render('form')
 })
 
+router.post('/new', (req, res) => {
+  messages.push({
+    title: req.body.title,
+    content: req.body.content,
+    user: req.body.user,
+    date: new Date()
+  })
+  res.redirect('/')
+})
 
 module.exports = router;
